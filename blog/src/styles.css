@@ -1,0 +1,54 @@
+body{
+  background-color: bisque;
+}
+li {
+  font-size: 17px;
+  display: inline;
+}
+.navbar{
+  margin: 0;
+  padding: 0;
+}
+p{
+  text-indent: 10px;
+}
+#form-main{
+  margin:20px auto;
+}
+#form-clear-button,#form-submit-button{
+  margin: 10px auto;
+}
+#form-buttons{
+  margin-top: 20px;
+}
+.main-container{
+  padding: 10px;
+  margin: 10px auto;
+}
+.right-side-h3{
+  text-align: center;
+}
+.side-bar-contact-element{
+  text-align: center;
+  font-size: 100px;
+  margin-top:10px;
+}
+.page-contrainer{
+  position: relative;
+  min-height: 100vh;
+}
+.footer{
+  position: absolute;
+  background-color: #303030;
+  color: #FFF;
+  height: 2.5rem;
+  padding: 10px;
+  text-align: center;
+  width:100%;
+}
+.scroll {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  display: none;
+}
