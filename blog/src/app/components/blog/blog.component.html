@@ -1,4 +1,7 @@
-<div *ngFor="let item of items$ | filter: filterText">
- <blog-item [image]="item.url" [text]="item.title">
-</blog-item>
+<selectize></selectize>
+
+<div class="row">
+  <div *ngFor="let item of items$ | filter: filterText" class="col-lg-auto col-md-auto">
+    <blog-item [id]="item.id" [image]="item.image" [text]="item.title"></blog-item>
+  </div>
 </div>

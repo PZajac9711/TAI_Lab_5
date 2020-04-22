@@ -1,0 +1,6 @@
+<input #input type="text" placeholder="Podaj nazwe" class="form-control input-by-name">
+
+<ul>
+  <li *ngFor="let p of posts$">
+    <a href="#" [routerLink]="['/blog/detail/', p.id]"> {{ p.text }}</a></li>
+</ul>

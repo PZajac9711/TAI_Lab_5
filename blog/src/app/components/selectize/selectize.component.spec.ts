@@ -1,22 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlogItemTextComponent } from './blog-item-text.component';
-import {Input} from "@angular/core";
+import { SelectizeComponent } from './selectize.component';
 
-describe('BlogItemTextComponent', () => {
-
-  let component: BlogItemTextComponent;
-  let fixture: ComponentFixture<BlogItemTextComponent>;
+describe('SelectizeComponent', () => {
+  let component: SelectizeComponent;
+  let fixture: ComponentFixture<SelectizeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlogItemTextComponent ]
+      declarations: [ SelectizeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BlogItemTextComponent);
+    fixture = TestBed.createComponent(SelectizeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

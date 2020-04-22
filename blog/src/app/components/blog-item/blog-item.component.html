@@ -1,2 +1,9 @@
-<blog-item-image [image]="image"></blog-item-image>
-<blog-item-text [text]="text"></blog-item-text>
+<div class="card" style="width: 26rem;">
+  <blog-item-image [image]="image"></blog-item-image>
+  <div class="card-body">
+    <p class="card-text">
+      <blog-item-text [id]="id" [text]="text"></blog-item-text>
+    </p>
+  </div>
+</div>
+
