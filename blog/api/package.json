@@ -12,7 +12,15 @@
   "dependencies": {
     "babel-core": "6.26.3",
     "babel-preset-es2015": "6.24.1",
-    "express": "4.17.1"
+    "babel-register": "6.26.0",
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "lodash": "4.17.15",
+    "mongodb": "3.5.7",
+    "mongoose": "5.9.12",
+    "mongoose-unique-validator": "2.0.3",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "2.0.3"
