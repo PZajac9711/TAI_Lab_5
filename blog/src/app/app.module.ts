@@ -11,7 +11,7 @@ import { BlogItemComponent } from './components/blog-item/blog-item.component';
 import { BlogItemTextComponent } from './components/blog-item-text/blog-item-text.component';
 import { BlogItemImageComponent } from './components/blog-item-image/blog-item-image.component';
 import { BlogItemDetailsComponent } from './components/blog-item-details/blog-item-details.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {DataService} from "./services/data.service";
 import { SummaryPipe } from './pipes/summary.pipe';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
@@ -21,6 +21,10 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { TextFormatDirective } from './directives/text-format.directive';
 import { SelectizeComponent } from './components/selectize/selectize.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
+import {AuthService} from "./services/auth.service";
+import {AuthInterceptor} from "./services/auth.interceptor";
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,9 @@ import { AddPostComponent } from './components/add-post/add-post.component';
     FilterPipe,
     TextFormatDirective,
     SelectizeComponent,
-    AddPostComponent
+    AddPostComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,13 @@ import { AddPostComponent } from './components/add-post/add-post.component';
     FormsModule
   ],
   providers: [
-    DataService
+    DataService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
