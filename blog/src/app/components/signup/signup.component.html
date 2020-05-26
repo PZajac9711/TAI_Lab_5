@@ -1,4 +1,4 @@
-<section class="signup">
+<section class="signup" *ngIf="isCreated==false">
   <h1 class="entry-title"><span>Zarejestruj się</span></h1>
   <hr>
   <form class="form-horizontal" method="post" name="signup" id="signup">
@@ -46,4 +46,9 @@
       </div>
     </div>
   </form>
+  <p style="color: red">{{error}}</p>
 </section>
+<ng-container *ngIf="isCreated==true">
+  <p>Twoje konto zostało pomyślnie utworzone!</p><br/>
+  <p id="goTo"><a [routerLink]="['/login']">Kliknij Tutaj aby się zalogować</a></p>
+</ng-container>

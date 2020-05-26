@@ -34,15 +34,12 @@ export class AuthService {
   }
 
   logout() {
-    console.log('asd');
-    if(this.currentUser.userId != null){
       return this.http.delete(this.url + '/user/logout/' + this.currentUser.userId)
         .pipe(
           map(() => {
             localStorage.removeItem('token');
           })
         );
-    }
   }
 
   isLoggedIn() {
@@ -57,7 +54,7 @@ export class AuthService {
   get currentUser() {
     const token = this.getToken();
     if (!token) {
-      return null;
+      return false;
     }
 
     return new JwtHelper().decodeToken(token);

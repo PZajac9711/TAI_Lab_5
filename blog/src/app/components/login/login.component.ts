@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
+import {NavbarComponent} from "../../navbar/navbar.component";
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
       if (!result) {
         this.logged = false;
       } else {
+        NavbarComponent.isLogged = true;
         this.logout = false;
         this.credentials = {
           login: '',
