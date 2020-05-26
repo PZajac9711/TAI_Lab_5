@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../services/data.service";
 import {Router} from "@angular/router";
+import {NavbarComponent} from "../../navbar/navbar.component";
 
 @Component({
   selector: 'add-post',
@@ -13,10 +14,17 @@ export class AddPostComponent implements OnInit {
     url: '',
     content: '',
   }
-
+  error;
+  enable;
   constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
+    this.error = '';
+    this.enable = true;
+    if(!NavbarComponent.isLogged){
+      this.error = 'aby dodać posta należy być zalogowanym';
+      this.enable = false;
+    }
   }
 
   save() {
