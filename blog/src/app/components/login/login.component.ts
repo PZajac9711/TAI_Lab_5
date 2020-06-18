@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   signIn() {
-    return this.authService.authenticate(this.credentials).subscribe((result) => {
+    return this.authService.authenticate().subscribe((result) => {
       if (!result) {
         this.logged = false;
       } else {

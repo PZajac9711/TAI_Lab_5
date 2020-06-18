@@ -1,8 +1,8 @@
 'use strict';
 
-import PasswordDAO from '../DAO/passwordDAO';
-import TokenDAO from '../DAO/tokenDAO';
-import UserDAO from '../DAO/userDAO';
+import PasswordDAO from '../dao/passwordDAO';
+import TokenDAO from '../dao/tokenDAO';
+import UserDAO from '../dao/userDAO';
 import applicationException from '../service/applicationException';
 import sha1 from 'sha1';
 

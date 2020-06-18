@@ -29,6 +29,7 @@ export class AddPostComponent implements OnInit {
 
   save() {
     this.dataService.createOrUpdate(this.post).subscribe(f => {
+      console.log(f);
       this.router.navigate(['/blog'])
     })
   }

@@ -9,24 +9,13 @@ import {JwtHelper} from 'angular2-jwt';
 @Injectable()
 export class AuthService {
 
-  private url = 'http://localhost:3000/api';
+  private url = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {
   }
 
-  authenticate(credentials) {
-    return this.http.post(this.url + '/user/auth', {
-      login: credentials.login,
-      password: credentials.password
-    }).pipe(
-      map((result: Token) => {
-        if (result && result.token) {
-          localStorage.setItem('token', result.token);
-          return true;
-        }
-        return false;
-      })
-    );
+  authenticate() {
+    return this.http.get(this.url + '/basicauth');
   }
 
   createOrUpdate(credentials) {
